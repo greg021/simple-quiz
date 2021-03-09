@@ -1,6 +1,6 @@
 {
   "short_name": "Simple Quiz",
-  "name": "A basic react quiz",
+  "name": "A quick Quiz Game created with React.",
   "icons": [
     {
       "src": "favicon.ico",
