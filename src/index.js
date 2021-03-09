@@ -45,25 +45,42 @@ class QuizBee extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="title">Simple Quiz</div>
-        {this.state.questionBank.length > 0 &&
-          this.state.responses < 5 &&
-          this.state.questionBank.map(
-            ({ question, answers, correct, questionId }) => (
-              <QuestionBox
-                question={question}
-                answers={answers}
-                key={questionId}
-                selected={(answer) => this.computeAnswer(answer, correct)}
-              />
-            )
-          )}
+      <>
+        <div className="container">
+          <div className="title">Simple Quiz</div>
+          {this.state.questionBank.length > 0 &&
+            this.state.responses < 5 &&
+            this.state.questionBank.map(
+              ({ question, answers, correct, questionId }) => (
+                <QuestionBox
+                  question={question}
+                  answers={answers}
+                  key={questionId}
+                  selected={(answer) => this.computeAnswer(answer, correct)}
+                />
+              )
+            )}
 
-        {this.state.responses === 5 ? (
-          <Result score={this.state.score} playAgain={this.playAgain} />
-        ) : null}
-      </div>
+          {this.state.responses === 5 ? (
+            <Result score={this.state.score} playAgain={this.playAgain} />
+          ) : null}
+        </div>
+        <div
+          style={{
+            height: "3rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#445",
+            fontSize: "0.9rem",
+          }}
+        >
+          &copy; 2021,
+          <a href="https://greg021.github.io" target="_blank" className="link">
+            Greg Jones
+          </a>
+        </div>
+      </>
     );
   }
 }

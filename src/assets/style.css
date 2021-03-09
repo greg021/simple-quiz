@@ -87,3 +87,13 @@ body {
   outline: none;
   cursor: pointer;
 }
+
+.link {
+  color: #556;
+  margin-left: 6px;
+  outline: none;
+}
+
+.link:hover {
+  color: #0080ff;
+}
